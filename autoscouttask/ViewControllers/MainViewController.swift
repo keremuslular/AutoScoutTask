@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController {
-    
     enum Section {
         case grid
     }
@@ -49,10 +48,10 @@ class MainViewController: UIViewController {
         
         view.backgroundColor = .systemGray6
         view.addSubview(collectionView)
-        collectionView.register(cellType: CarCardCollectionViewCell.self)
         
+        collectionView.register(cellType: CardCollectionViewCell.self)
         collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
         }
         
         fetchCars()
@@ -96,7 +95,7 @@ class MainViewController: UIViewController {
     func makeDataSource() -> DataSource {
         let dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, dataItem) -> UICollectionViewCell? in
             if let car = dataItem as? Car {
-                let cell: CarCardCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+                let cell: CardCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
                 cell.car = car
                 return cell
             } else {
@@ -116,6 +115,8 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//  TODO:      Will open detail view
+        let detailViewController = DetailViewController()
+        detailViewController.car = cars[indexPath.item]
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

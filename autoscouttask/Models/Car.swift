@@ -5,7 +5,7 @@
 //  Created by Kerem Uslular on 28.02.2023.
 //
 
-import Foundation
+import UIKit
 
 struct Car: Codable, Hashable {
     let id: Int
@@ -24,6 +24,20 @@ struct Car: Codable, Hashable {
 
 struct CarImage: Codable, Hashable {
     let url: String
+    
+    // Storing data of the image because the images from the endpoint gives random urls each time it's called
+    var pngData: Data?
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        url = try container.decode(String.self, forKey: .url)
+        
+        if let data = try? Data(contentsOf: URL(string: url)!) {
+            if let image = UIImage(data: data) {
+                pngData = image.pngData()!
+            }
+        }
+    }
 }
 
 struct Seller: Codable, Hashable {

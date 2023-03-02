@@ -8,13 +8,15 @@
 import UIKit
 
 class ImageCarouselView: UIView {
-
     lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll.delegate = self
         scroll.isPagingEnabled = true
         scroll.showsHorizontalScrollIndicator = false
+        scroll.showsVerticalScrollIndicator = false
+        scroll.isDirectionalLockEnabled = true
         scroll.backgroundColor = .black.withAlphaComponent(0.1)
+        scroll.contentInsetAdjustmentBehavior = .never
         return scroll
     }()
     
@@ -27,39 +29,20 @@ class ImageCarouselView: UIView {
     private var imageViews = [UIImageView]()
     private var currentPage = 0
     
-    var images: [CarImage]? = [] {
+    var images: [UIImage] = [] {
         didSet {
-            if let images = images, images.count > 0 {
-                // Remove any existing image views in case of a reload/reuse
-                imageViews.forEach { $0.removeFromSuperview() }
-                imageViews = []
-                
-                for image in images {
-                    let imageView = UIImageView()
-                    let activityIndicatorView = UIActivityIndicatorView(style: .medium)
-                    activityIndicatorView.hidesWhenStopped = true
-                    
-                    [imageView, activityIndicatorView].forEach(scrollView.addSubview)
-                    activityIndicatorView.snp.makeConstraints { make in
-                        make.center.equalTo(imageView)
-                    }
-                    
-                    activityIndicatorView.startAnimating()
-                    imageView.loadImage(from: image.url, contentMode: .scaleAspectFit) {
-                        activityIndicatorView.stopAnimating()
-                    }
-                    imageViews.append(imageView)
-                }
-                
-                pageControl.numberOfPages = images.count
-            } else {
-                let placeholderImageView = UIImageView(image: UIImage(named: "carPlaceholder"))
-                placeholderImageView.isOpaque = true
-                placeholderImageView.contentMode = .scaleAspectFit
-                
-                scrollView.addSubview(placeholderImageView)
-                imageViews = [placeholderImageView]
+            imageViews.forEach { $0.removeFromSuperview() }
+            imageViews = []
+
+            for image in images {
+                let imageView = UIImageView(image: image)
+                imageView.contentMode = .scaleAspectFit
+                imageView.clipsToBounds = true
+                scrollView.addSubview(imageView)
+                imageViews.append(imageView)
             }
+            imageViews.forEach(scrollView.addSubview)
+            pageControl.numberOfPages = imageViews.count
             
             setNeedsLayout()
         }

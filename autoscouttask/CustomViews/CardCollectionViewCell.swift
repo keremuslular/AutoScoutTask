@@ -1,5 +1,5 @@
 //
-//  CarCardCollectionViewCell.swift
+//  CardCollectionViewCell.swift
 //  autoscouttask
 //
 //  Created by Kerem Uslular on 28.02.2023.
@@ -9,8 +9,7 @@ import UIKit
 import SnapKit
 import Reusable
 
-class CarCardCollectionViewCell: UICollectionViewCell, Reusable {
-    
+class CardCollectionViewCell: UICollectionViewCell, Reusable {
     var car: Car? {
         didSet {
             guard let car = car else { return }
@@ -54,7 +53,7 @@ class CarCardCollectionViewCell: UICollectionViewCell, Reusable {
         
         imageCarouselView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
-            make.height.equalTo(150.0)
+            make.height.equalTo(135.0)
         }
         
         infoContainerView.snp.makeConstraints { make in
@@ -75,7 +74,7 @@ class CarCardCollectionViewCell: UICollectionViewCell, Reusable {
         
         detailStackView.snp.makeConstraints { make in
             make.top.equalTo(priceLabel.snp.bottom).offset(5.0)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
         }
     }
     
@@ -84,7 +83,14 @@ class CarCardCollectionViewCell: UICollectionViewCell, Reusable {
     }
     
     func prepare(with car: Car) {
-        imageCarouselView.images = car.images?.compactMap { $0 }
+        var images: [UIImage] = []
+        if let carImages = car.images, carImages.count > 0 {
+            images = carImages.compactMap { UIImage(data: $0.pngData!) }
+        } else {
+            images = [UIImage(named: "carPlaceholder")!]
+        }
+        imageCarouselView.images = images
+        
         titleLabel.text = "\(car.make) \(car.model)"
         priceLabel.text = "€ \(car.price).-"
         
