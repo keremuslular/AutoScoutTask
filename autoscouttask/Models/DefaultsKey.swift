@@ -11,8 +11,8 @@ enum DefaultsKey: String, CaseIterable {
     case minPrice
     case maxPrice
     
-    case minMilage
-    case maxMilage
+    case minMileage
+    case maxMileage
     
     case fuelType
     

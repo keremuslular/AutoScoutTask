@@ -201,10 +201,11 @@ class FilterSelectionView: UIView {
             slider.minLabelColor = .black
             slider.maxLabelColor = .black
             slider.enableStep = true
-            slider.step = 1
+            slider.step = 1000
 
             var minValue: CGFloat = Constant.rangeMin
-            var maxValue: CGFloat = Constant.rangeMax
+            var maxValue: CGFloat = filter.category == .price ? Constant.rangeMaxPrice : Constant.rangeMaxMileage
+            
             if filter.category == .price {
                 if UserDefaults.standard.float(forKey: DefaultsKey.minPrice.rawValue) != 0.0 {
                     minValue = CGFloat(UserDefaults.standard.float(forKey: DefaultsKey.minPrice.rawValue))
@@ -218,21 +219,21 @@ class FilterSelectionView: UIView {
                     UserDefaults.standard.set(maxValue, forKey: DefaultsKey.maxPrice.rawValue)
                 }
             } else {
-                if UserDefaults.standard.float(forKey: DefaultsKey.minMilage.rawValue) != 0.0 {
-                    minValue = CGFloat(UserDefaults.standard.float(forKey: DefaultsKey.minMilage.rawValue))
+                if UserDefaults.standard.float(forKey: DefaultsKey.minMileage.rawValue) != 0.0 {
+                    minValue = CGFloat(UserDefaults.standard.float(forKey: DefaultsKey.minMileage.rawValue))
                 } else {
-                    UserDefaults.standard.set(minValue, forKey: DefaultsKey.minMilage.rawValue)
+                    UserDefaults.standard.set(minValue, forKey: DefaultsKey.minMileage.rawValue)
                 }
                 
-                if UserDefaults.standard.float(forKey: DefaultsKey.maxMilage.rawValue) != 0.0 {
-                    maxValue = CGFloat(UserDefaults.standard.float(forKey: DefaultsKey.maxMilage.rawValue))
+                if UserDefaults.standard.float(forKey: DefaultsKey.maxMileage.rawValue) != 0.0 {
+                    maxValue = CGFloat(UserDefaults.standard.float(forKey: DefaultsKey.maxMileage.rawValue))
                 } else {
-                    UserDefaults.standard.set(maxValue, forKey: DefaultsKey.maxMilage.rawValue)
+                    UserDefaults.standard.set(maxValue, forKey: DefaultsKey.maxMileage.rawValue)
                 }
             }
             
             slider.minValue = Constant.rangeMin
-            slider.maxValue = Constant.rangeMax
+            slider.maxValue = filter.category == .price ? Constant.rangeMaxPrice : Constant.rangeMaxMileage
             slider.selectedMinValue = minValue
             slider.selectedMaxValue = maxValue
             
@@ -332,7 +333,7 @@ class FilterSelectionView: UIView {
             UserDefaults.standard.set(slider.selectedMinValue, forKey: DefaultsKey.minPrice.rawValue)
             UserDefaults.standard.set(slider.selectedMaxValue, forKey: DefaultsKey.maxPrice.rawValue)
             
-            if slider.selectedMinValue != Constant.rangeMin || slider.selectedMaxValue != Constant.rangeMax {
+            if slider.selectedMinValue != Constant.rangeMin || slider.selectedMaxValue != Constant.rangeMaxPrice {
                 let numberFormatter = NumberFormatter()
                 numberFormatter.numberStyle = .decimal
                 let minString = numberFormatter.string(from: NSNumber(value: Int(slider.selectedMinValue))) ?? ""
@@ -346,16 +347,16 @@ class FilterSelectionView: UIView {
         case .mileage:
             guard let slider = slider else { return }
 
-            UserDefaults.standard.set(slider.selectedMinValue, forKey: DefaultsKey.minMilage.rawValue)
-            UserDefaults.standard.set(slider.selectedMaxValue, forKey: DefaultsKey.maxMilage.rawValue)
+            UserDefaults.standard.set(slider.selectedMinValue, forKey: DefaultsKey.minMileage.rawValue)
+            UserDefaults.standard.set(slider.selectedMaxValue, forKey: DefaultsKey.maxMileage.rawValue)
             
-            if slider.selectedMinValue != Constant.rangeMin || slider.selectedMaxValue != Constant.rangeMax {
+            if slider.selectedMinValue != Constant.rangeMin || slider.selectedMaxValue != Constant.rangeMaxMileage {
                 let numberFormatter = NumberFormatter()
                 numberFormatter.numberStyle = .decimal
                 let minString = numberFormatter.string(from: NSNumber(value: Int(slider.selectedMinValue))) ?? ""
                 let maxString = numberFormatter.string(from: NSNumber(value: Int(slider.selectedMaxValue))) ?? ""
                 
-                filter.changedTitle = "Milage: \(minString) - \(maxString)"
+                filter.changedTitle = "Mileage: \(minString) - \(maxString)"
                 delegate?.filterSelectionViewDidSavedChangedValue(self, of: filter)
             } else {
                 delegate?.filterSelectionViewDidReturnToDefault(self, of: filter)
@@ -406,10 +407,10 @@ class FilterSelectionView: UIView {
         switch filter.category {
         case .price:
             UserDefaults.standard.set(Constant.rangeMin, forKey: DefaultsKey.minPrice.rawValue)
-            UserDefaults.standard.set(Constant.rangeMax, forKey: DefaultsKey.maxPrice.rawValue)
+            UserDefaults.standard.set(Constant.rangeMaxPrice, forKey: DefaultsKey.maxPrice.rawValue)
         case .mileage:
-            UserDefaults.standard.set(Constant.rangeMin, forKey: DefaultsKey.minMilage.rawValue)
-            UserDefaults.standard.set(Constant.rangeMax, forKey: DefaultsKey.maxMilage.rawValue)
+            UserDefaults.standard.set(Constant.rangeMin, forKey: DefaultsKey.minMileage.rawValue)
+            UserDefaults.standard.set(Constant.rangeMaxMileage, forKey: DefaultsKey.maxMileage.rawValue)
         case .fuel:
             UserDefaults.standard.set(Constant.selection, forKey: DefaultsKey.fuelType.rawValue)
         case .colour:

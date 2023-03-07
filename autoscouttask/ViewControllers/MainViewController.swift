@@ -52,6 +52,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "CARS"
         
         view.backgroundColor = .systemGray6
         [filterCollectionView, collectionView].forEach(view.addSubview)
@@ -132,10 +133,10 @@ class MainViewController: UIViewController {
     
     func checkFilters() {
         let minPrice = UserDefaults.standard.float(forKey: DefaultsKey.minPrice.rawValue) != 0.0 ? CGFloat(UserDefaults.standard.float(forKey: DefaultsKey.minPrice.rawValue)) : Constant.rangeMin
-        let maxPrice = UserDefaults.standard.float(forKey: DefaultsKey.maxPrice.rawValue) != 0.0 ? CGFloat(UserDefaults.standard.float(forKey: DefaultsKey.maxPrice.rawValue)) : Constant.rangeMax
+        let maxPrice = UserDefaults.standard.float(forKey: DefaultsKey.maxPrice.rawValue) != 0.0 ? CGFloat(UserDefaults.standard.float(forKey: DefaultsKey.maxPrice.rawValue)) : Constant.rangeMaxPrice
         
-        let minMilage = UserDefaults.standard.float(forKey: DefaultsKey.minMilage.rawValue) != 0.0 ? CGFloat(UserDefaults.standard.float(forKey: DefaultsKey.minMilage.rawValue)) : Constant.rangeMin
-        let maxMilage = UserDefaults.standard.float(forKey: DefaultsKey.maxMilage.rawValue) != 0.0 ? CGFloat(UserDefaults.standard.float(forKey: DefaultsKey.maxMilage.rawValue)) : Constant.rangeMax
+        let minMileage = UserDefaults.standard.float(forKey: DefaultsKey.minMileage.rawValue) != 0.0 ? CGFloat(UserDefaults.standard.float(forKey: DefaultsKey.minMileage.rawValue)) : Constant.rangeMin
+        let maxMileage = UserDefaults.standard.float(forKey: DefaultsKey.maxMileage.rawValue) != 0.0 ? CGFloat(UserDefaults.standard.float(forKey: DefaultsKey.maxMileage.rawValue)) : Constant.rangeMaxMileage
         
         let fuelType = UserDefaults.standard.string(forKey: DefaultsKey.fuelType.rawValue) ?? Constant.selection
         
@@ -152,7 +153,7 @@ class MainViewController: UIViewController {
                 continue
             }
             
-            if !(minMilage...maxMilage).contains(CGFloat(car.mileage)) {
+            if !(minMileage...maxMileage).contains(CGFloat(car.mileage)) {
                 indexesToRemove.insert(index)
                 continue
             }
@@ -189,7 +190,7 @@ extension MainViewController: UICollectionViewDelegate {
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailViewController = DetailViewController()
         detailViewController.car = cars[indexPath.item]
-        navigationController?.pushViewController(detailViewController, animated: true)
+        navigationController?.pushViewController(detailViewController, animated: false)
     }
 }
 

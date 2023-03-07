@@ -9,7 +9,8 @@ import Foundation
 
 struct Constant {
     static var rangeMin: CGFloat = 0.0
-    static var rangeMax: CGFloat = 250000.0
+    static var rangeMaxPrice: CGFloat = 100000.0
+    static var rangeMaxMileage: CGFloat = 250000.0
     
     static var selection = "Any"
     

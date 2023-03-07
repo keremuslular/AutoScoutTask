@@ -65,6 +65,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "DETAILS"
+        
         view.backgroundColor = .white.withAlphaComponent(0.9)
         
         [imageCarouselView, infoContainerView].forEach(view.addSubview)
@@ -121,14 +123,14 @@ class DetailViewController: UIViewController {
         priceLabel.text = "€ \(car.price).-"
         descriptionLabel.text = car.description
         
-        let milage = "\(car.mileage) km"
+        let mileage = "\(car.mileage) km"
         let fuel = car.fuel
         let modelline = "Modelline: \(car.modelline ?? "-")"
         let colour = "Colour: \(car.colour ?? "-")"
         let firstRegistration = "Registration: \(car.firstRegistration ?? "-")"
         let city = "City: " + (car.seller?.city ?? "-")
         
-        propertyStrings = [milage, fuel, modelline, colour, firstRegistration, city]
+        propertyStrings = [mileage, fuel, modelline, colour, firstRegistration, city]
         
         contactButton.isHidden = car.seller?.phone == nil
     }

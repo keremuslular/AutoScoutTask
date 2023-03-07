@@ -95,14 +95,14 @@ class CardCollectionViewCell: UICollectionViewCell, Reusable {
         priceLabel.text = "€ \(car.price).-"
         
         // Set used properties in detail
-        let milage = "\(car.mileage) km"
+        let mileage = "\(car.mileage) km"
         let fuel = car.fuel
         let modelline = "Modelline: \(car.modelline ?? "-")"
         let colour = "Colour: \(car.colour ?? "-")"
         let firstRegistration = "Registration: \(car.firstRegistration ?? "-")"
         let description = car.description
         
-        let detailStrings = [milage, fuel, modelline, colour, firstRegistration, description]
+        let detailStrings = [mileage, fuel, modelline, colour, firstRegistration, description]
         
         detailStrings.forEach { string in
             let label: UILabel = {
