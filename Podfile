@@ -8,5 +8,7 @@ target 'autoscouttask' do
   # Pods for autoscouttask
     pod 'SnapKit', '~> 5.0.0'
     pod 'Reusable'
+    pod 'RangeSeekSlider'
+    pod 'DropDown'
 
 end

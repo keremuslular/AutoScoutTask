@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0527D82A29B38CB70017B6A3 /* FilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527D82929B38CB70017B6A3 /* FilterCollectionView.swift */; };
 		054F74BC29AE32BE0002FD5C /* ImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054F74BB29AE32BE0002FD5C /* ImageCarouselView.swift */; };
 		054F74BF29AF524F0002FD5C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054F74BE29AF524F0002FD5C /* UIViewExtension.swift */; };
 		054F74C729AF752E0002FD5C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054F74C629AF752E0002FD5C /* DetailViewController.swift */; };
+		0553399C29B607F100884893 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0553399B29B607F100884893 /* UIColorExtension.swift */; };
+		0553399E29B6439700884893 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0553399D29B6439700884893 /* Constant.swift */; };
+		055339C029B7555100884893 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055339BF29B7555100884893 /* UIStackViewExtension.swift */; };
+		055339C229B7558800884893 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055339C129B7558800884893 /* DateExtension.swift */; };
 		05CB448929AE15AC00ECBDD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CB448829AE15AC00ECBDD9 /* AppDelegate.swift */; };
 		05CB448B29AE15AC00ECBDD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CB448A29AE15AC00ECBDD9 /* SceneDelegate.swift */; };
 		05CB448D29AE15AC00ECBDD9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CB448C29AE15AC00ECBDD9 /* MainViewController.swift */; };
@@ -18,13 +23,22 @@
 		05CB449F29AE198800ECBDD9 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CB449E29AE198800ECBDD9 /* Car.swift */; };
 		05CB44A129AE21AB00ECBDD9 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CB44A029AE21AB00ECBDD9 /* CardCollectionViewCell.swift */; };
 		05E7C71C29B0E954007C5DBD /* PropertiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E7C71B29B0E954007C5DBD /* PropertiesCollectionViewCell.swift */; };
+		05EFF98D29B49D8A000F41E3 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EFF98C29B49D8A000F41E3 /* FilterCollectionViewCell.swift */; };
+		05EFF98F29B49DAF000F41E3 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EFF98E29B49DAF000F41E3 /* Filter.swift */; };
+		05EFF99129B513FD000F41E3 /* FilterSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EFF99029B513FD000F41E3 /* FilterSelectionView.swift */; };
+		05EFF99329B52334000F41E3 /* DefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EFF99229B52334000F41E3 /* DefaultsKey.swift */; };
 		FBA36C3400B8A28ED5E2064A /* Pods_autoscouttask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9F48B982DB0504F88EA89F /* Pods_autoscouttask.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0527D82929B38CB70017B6A3 /* FilterCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionView.swift; sourceTree = "<group>"; };
 		054F74BB29AE32BE0002FD5C /* ImageCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCarouselView.swift; sourceTree = "<group>"; };
 		054F74BE29AF524F0002FD5C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		054F74C629AF752E0002FD5C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0553399B29B607F100884893 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		0553399D29B6439700884893 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		055339BF29B7555100884893 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
+		055339C129B7558800884893 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		05CB448529AE15AC00ECBDD9 /* autoscouttask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = autoscouttask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05CB448829AE15AC00ECBDD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05CB448A29AE15AC00ECBDD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +49,10 @@
 		05CB449E29AE198800ECBDD9 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		05CB44A029AE21AB00ECBDD9 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		05E7C71B29B0E954007C5DBD /* PropertiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesCollectionViewCell.swift; sourceTree = "<group>"; };
+		05EFF98C29B49D8A000F41E3 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		05EFF98E29B49DAF000F41E3 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		05EFF99029B513FD000F41E3 /* FilterSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSelectionView.swift; sourceTree = "<group>"; };
+		05EFF99229B52334000F41E3 /* DefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKey.swift; sourceTree = "<group>"; };
 		4FB3AFC7B3F90A18AC966A8A /* Pods-autoscouttask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-autoscouttask.release.xcconfig"; path = "Target Support Files/Pods-autoscouttask/Pods-autoscouttask.release.xcconfig"; sourceTree = "<group>"; };
 		6A9F48B982DB0504F88EA89F /* Pods_autoscouttask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_autoscouttask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4246C79024AB68C8A8AFB8 /* Pods-autoscouttask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-autoscouttask.debug.xcconfig"; path = "Target Support Files/Pods-autoscouttask/Pods-autoscouttask.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +74,9 @@
 			isa = PBXGroup;
 			children = (
 				054F74BE29AF524F0002FD5C /* UIViewExtension.swift */,
+				0553399B29B607F100884893 /* UIColorExtension.swift */,
+				055339BF29B7555100884893 /* UIStackViewExtension.swift */,
+				055339C129B7558800884893 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -66,6 +87,9 @@
 				05CB44A029AE21AB00ECBDD9 /* CardCollectionViewCell.swift */,
 				054F74BB29AE32BE0002FD5C /* ImageCarouselView.swift */,
 				05E7C71B29B0E954007C5DBD /* PropertiesCollectionViewCell.swift */,
+				0527D82929B38CB70017B6A3 /* FilterCollectionView.swift */,
+				05EFF98C29B49D8A000F41E3 /* FilterCollectionViewCell.swift */,
+				05EFF99029B513FD000F41E3 /* FilterSelectionView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -83,6 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				05CB449E29AE198800ECBDD9 /* Car.swift */,
+				05EFF98E29B49DAF000F41E3 /* Filter.swift */,
+				05EFF99229B52334000F41E3 /* DefaultsKey.swift */,
+				0553399D29B6439700884893 /* Constant.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,11 +280,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				054F74C729AF752E0002FD5C /* DetailViewController.swift in Sources */,
+				05EFF98F29B49DAF000F41E3 /* Filter.swift in Sources */,
+				0553399C29B607F100884893 /* UIColorExtension.swift in Sources */,
+				0553399E29B6439700884893 /* Constant.swift in Sources */,
 				05E7C71C29B0E954007C5DBD /* PropertiesCollectionViewCell.swift in Sources */,
+				05EFF99329B52334000F41E3 /* DefaultsKey.swift in Sources */,
+				055339C029B7555100884893 /* UIStackViewExtension.swift in Sources */,
 				054F74BC29AE32BE0002FD5C /* ImageCarouselView.swift in Sources */,
 				05CB44A129AE21AB00ECBDD9 /* CardCollectionViewCell.swift in Sources */,
+				05EFF98D29B49D8A000F41E3 /* FilterCollectionViewCell.swift in Sources */,
 				05CB448D29AE15AC00ECBDD9 /* MainViewController.swift in Sources */,
 				05CB448929AE15AC00ECBDD9 /* AppDelegate.swift in Sources */,
+				0527D82A29B38CB70017B6A3 /* FilterCollectionView.swift in Sources */,
+				055339C229B7558800884893 /* DateExtension.swift in Sources */,
+				05EFF99129B513FD000F41E3 /* FilterSelectionView.swift in Sources */,
 				054F74BF29AF524F0002FD5C /* UIViewExtension.swift in Sources */,
 				05CB449F29AE198800ECBDD9 /* Car.swift in Sources */,
 				05CB448B29AE15AC00ECBDD9 /* SceneDelegate.swift in Sources */,
@@ -408,7 +444,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -441,7 +477,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

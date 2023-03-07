@@ -116,4 +116,9 @@ class CardCollectionViewCell: UICollectionViewCell, Reusable {
             self.detailStackView.addArrangedSubview(label)
         }
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.detailStackView.removeAllArrangedSubviews()
+    }
 }
